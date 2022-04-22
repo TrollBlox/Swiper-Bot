@@ -18,8 +18,6 @@ class SwiperBot(discord.Client):
       if msg.attachments:
         channel = await message.author.create_dm()
         for attachment in msg.attachments:
-          r = requests.get(attachment.url, allow_redirects = True)
-          open('0.png', 'wb').write(r.content)
           await channel.send("```\n" + attachment.url + "\n```")
 
 client = SwiperBot()
